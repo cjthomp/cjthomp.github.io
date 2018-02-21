@@ -1,0 +1,16 @@
+.hero {
+	position: relative;
+	height: 600px;
+	background: url('./assets/mountains.jpg') bottom no-repeat; 
+	background-size: cover; 
+}
+
+.hero-title {
+	position: absolute;
+	bottom: 25px;
+	right: 25px;
+	font-size: 6em;
+	color: #FCFCFC;
+	text-align: right;
+	text-shadow: 6px 6px 6px #505050;
+}
