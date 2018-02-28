@@ -1,10 +1,101 @@
 <html>
 <head>
   <title>cjthomp.github.io</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-XNRTCesHENaXoVVjLx3Vm0rmwmS4W2g5w0xwZQIDPDvT4IDa/HRIvwb8CoH7/JPW" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-XNRTCesHENaXoVVjLx3Vm0rmwmS4W2g5w0xwZQIDPDvT4IDa/HRIvwb8CoH7/JPW" crossorigin="anonymous" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" rel="stylesheet" type="text/css" />
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+  <style>
+.spinner {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-sizing: border-box; 
+  position: absolute;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+#icon-container {
+  position: absolute;
+  z-index: 1;
+  width: 640px;
+  height: 640px;
+  top: 50%;
+  left: 30%;
+/*   border: 1px inset #101010; */
+  transform: rotateX(80deg);
+  transform-style: preserve-3d;
+}
+
+.orbit {
+  position: absolute;
+  width: 30em;
+  height: 30em;
+  top: 10%;
+  left: 20%;
+/*   border: 1px solid #000000; */
+/*   border-radius: 50%; */
+  animation-duration: 9750ms;
+  animation-name: orbit;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.icon {
+  position: absolute;
+  height: 48px;
+  width: auto;
+  top: -15%;
+  left: 0%;
+  margin-left: 100px;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transform: rotateX(80deg) scale(0);
+  animation-name: align;
+  animation-duration: 9750ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#logo1,  #logo1 img  { animation-delay: 750ms; }
+#logo2,  #logo2 img  { animation-delay: 1500ms; }
+#logo3,  #logo3 img  { animation-delay: 2250ms; }
+#logo4,  #logo4 img  { animation-delay: 3000ms; }
+#logo5,  #logo5 img  { animation-delay: 3750ms; }
+#logo6,  #logo6 img  { animation-delay: 4500ms; }
+#logo7,  #logo7 img  { animation-delay: 5250ms; }
+#logo8,  #logo8 img  { animation-delay: 6000ms; }
+#logo9,  #logo9 img  { animation-delay: 6750ms; }
+#logo10, #logo10 img { animation-delay: 7500ms; }
+#logo11, #logo11 img { animation-delay: 8250ms; }
+#logo12, #logo12 img { animation-delay: 9000ms; }
+#logo13, #logo13 img { animation-delay: 9750ms; }
+
+/**** animations ****/
+@keyframes orbit {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes align {
+  0% { transform: scale(1.2) rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
+  
+  33% { transform: scale(2) rotateX(-90deg) rotateY(-120deg) rotateZ(0deg); }
+  
+  66% { transform: scale(2) rotateX(-90deg) rotateY(-240deg) rotateZ(0deg); }
+  
+  100% { transform: scale(1.2) rotateX(-90deg) rotateY(-360deg) rotateZ(0deg); }
+}  
+</style>
 </head>
 <body>
 
@@ -63,7 +154,49 @@
           <div class="row">
 
             <div class="col-md-10 col-md-offset-1">
-              portfolio
+              <div class="spinner">
+                <div id="icon-container">
+                  <div id="logo1" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/laravel.png" class="icon">
+                  </div>
+                  <div id="logo2" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/bootstrap.png" class="icon">
+                  </div>
+                  <div id="logo3" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/vuejs.jpg" class="icon">
+                  </div>
+                  <div id="logo4" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/postgresql.png" class="icon">
+                  </div>
+                  <div id="logo5" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/mysql.png" class="icon">
+                  </div>
+                  <div id="logo6" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/nodejs.png" class="icon">
+                  </div>
+                  <div id="logo7" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/heroku.png" class="icon">
+                  </div>    
+                  <div id="logo8" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/redis.png" class="icon">
+                  </div>    
+                  <div id="logo9" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/stripe.png" class="icon">
+                  </div>    
+                  <div id="logo10" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/forge.png" class="icon">
+                  </div>    
+                  <div id="logo11" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/envoyer.png" class="icon">
+                  </div>    
+                  <div id="logo12" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/google-drive.png" class="icon">
+                  </div>    
+                  <div id="logo13" class="orbit">
+                    <img src="https://raw.githubusercontent.com/cjthomp/cjthomp.github.io/master/assets/firebase.png" class="icon">
+                  </div>    
+                </div>
+              </div>
             </div>
 
           </div>
@@ -108,11 +241,10 @@
 
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.min.js"></script>
+  <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
